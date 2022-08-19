@@ -1,5 +1,7 @@
 # devops-day2-backend
 
+https://devops-day2.herokuapp.com/
+
 this is to set up workflow on github
 
 1) Seetings -> Secrects->Action: Set up email, app name and Api key. 
