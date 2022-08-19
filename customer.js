@@ -17,6 +17,16 @@ router.get("/customer/all", (request, response) => {
 });
 //Note: use query instead of all for MySQL - database.connection.query("select * from customer"
 
+router.get("/", (request, response) => {
+  database.connection.all("select * from customer", (errors, results) => {
+    if (errors) {
+      response.status(500).send("Some error occurred");
+    } else {
+      response.status(200).send(results);
+    }
+  });
+});
+
 // defines an API which takes id in the request and return the record in response
 router.get("/customer/id", (request, response) => {
   sqlst = `select * from customer where customer_id = ${request.query.cid}`; 
